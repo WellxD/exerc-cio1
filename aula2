@@ -1,0 +1,102 @@
+Criação de objetos, exemplo:
+
+let eu = {
+  nome: "Wellington Tavares da Silva",
+  idade: 25,
+  data_de_nascimento: "07.10.1996",
+  estilo_de_musica_favorito: "Rock/Metal Progressivo",
+  tem_carro: "Sim"
+}
+// console.log(eu) para chamar todos os atributos
+//alert(eu.atributo) para chamar apenas um atributo de dentro do objetivo
+
+Criação de classe: exemplo
+
+class Pessoa {
+  nomeCompleto
+  idade
+  dataNascimento
+  estiloMusica
+  carros
+  filhos
+}
+
+let eu = new Pessoa()
+eu.nomeCompleto = "Wellington"
+eu.idade = "25"
+eu.dataNascimento = "07/10/1996"
+console.log(eu)
+
+let voce = new Pessoa()
+voce.nomeCompleto = "Maria"
+console.log(voce)
+
+// console.log(eu) para chamar todos os atributos
+//alert(eu.atributo) para chamar apenas um atributo de dentro do objetivo
+
+Chamando um atributo da classe dentro da classe, exemplo: 
+
+class Pessoa {
+  nomeCompleto
+  dataNascimento
+  
+  calcularIdade(anoAtual){
+    return anoAtual - this.dataNascimento
+  }
+}
+
+let eu = new Pessoa()
+eu.nomeCompleto = "Wellington"
+eu.dataNascimento = 1996
+var idade = eu.calcularIdade()
+console.log(idade)
+
+let voce = new Pessoa()
+voce.nomeCompleto = "Maria"
+voce.dataNascimento = 1980
+var idade = voce.calcularIdade()
+console.log(idade)
+
+Funções fora da classe chamando atributos de dentro da classe, exemplo:
+
+class Pessoa {
+  nomeCompleto
+  dataNascimento
+  idade = 0
+  
+  calcularIdade(anoAtual){
+    this.idade - this.dataNascimento
+  }
+}
+
+let eu = new Pessoa()
+eu.nomeCompleto = "Wellington"
+eu.dataNascimento = 1996
+eu.calcularIdade(2022)
+autenticar(eu)
+
+function autenticar(pessoa){
+ console.log(pessoa) 
+}
+
+Método construtor, exemplo:
+
+class Pessoa {
+  nomeCompleto
+  dataNascimento
+  idade
+  
+  constructor(nome, dataNascimento) {
+    this.nomeCompleto = nome
+    this.dataNascimento = dataNascimento
+    this.calcularIdade()
+  }
+  
+  calcularIdade(anoAtual){
+    this.idade = 2022 - this.dataNascimento
+  }
+}
+
+let eu = new Pessoa("Wellington", 1992)
+console.log
+let eu2 = new Pessoa("João", 1992)
